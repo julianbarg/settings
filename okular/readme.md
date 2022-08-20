@@ -10,3 +10,10 @@ To save the settings
 settings="$(git rev-parse --show-toplevel)"
 cp $HOME/.config/okularpartrc "${settings}/okular"
 ```
+
+To restore settings
+
+```bash
+settings="$(git rev-parse --show-toplevel)"
+cp "${settings}/okular" $HOME/.config/okularpartrc
+```
