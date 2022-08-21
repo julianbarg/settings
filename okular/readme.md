@@ -4,16 +4,21 @@ To make sure that okular opens new pdfs in the same instance and in a new/existi
 sudo snap install --devmode okular
 ```
 
-To save the settings
+To save the settings, first create a snapshot.
 
 ```bash
-settings="$(git rev-parse --show-toplevel)"
-cp $HOME/.config/okularpartrc "${settings}/okular"
+snap save okular
 ```
-
-To restore settings
+Note down the id of the snapshot. Then save the snapshot to a file. Below I save snapshot 57.
 
 ```bash
+sudo snap export-snapshot 57 $HOME/okular_snapshot
 settings="$(git rev-parse --show-toplevel)"
-cp "${settings}/okular" $HOME/.config/okularpartrc
+cp $HOME/okular_snapshot "$settings/okular/"
+```
+Then import snapshot and restore.
+
+```bash
+sudo snap import-snapshot okular/okular_snapshot
+sudo snap restore 55
 ```
