@@ -9,13 +9,15 @@ To save the settings, first create a snapshot.
 ```bash
 snap save okular
 ```
-Note down the id of the snapshot. Then save the snapshot to a file. Below I save snapshot 57.
+
+Note down the id of the snapshot. Then save the snapshot to a file. Below I save snapshot 10.
 
 ```bash
-sudo snap export-snapshot 57 $HOME/okular_snapshot
+sudo snap export-snapshot 10 $HOME/okular_snapshot
 settings="$(git rev-parse --show-toplevel)"
 cp $HOME/okular_snapshot "$settings/okular/"
 ```
+
 Then import snapshot and restore.
 
 ```bash
