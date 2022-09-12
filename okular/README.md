@@ -13,7 +13,7 @@ snap save okular
 Note down the id of the snapshot. Then save the snapshot to a file. Below I save snapshot 60.
 
 ```bash
-sudo snap export-snapshot 60 $HOME/okular_snapshot
+sudo snap export-snapshot 62 $HOME/okular_snapshot
 settings="$(git rev-parse --show-toplevel)"
 cp $HOME/okular_snapshot "$settings/okular/"
 ```
